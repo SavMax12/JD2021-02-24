@@ -54,7 +54,6 @@ public class ParserTest {
         expected1 = 10;
         assertEquals(expected1, actual1, 1e-5);
 
-
     }
 
     @After
