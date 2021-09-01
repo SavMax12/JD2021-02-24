@@ -31,7 +31,7 @@ class VarRepository {
                 Files.lines(Paths.get(VARS_FILE_NAME))
                         .forEach(line -> {
                             try {
-                                parser.evaluate(line);
+                                parser.calc(line);
                             } catch (CalcException e) {
                                 //stub
                             }

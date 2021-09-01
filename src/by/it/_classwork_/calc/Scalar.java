@@ -21,7 +21,7 @@ class Scalar extends Var {
         if (other instanceof Scalar) {
             return new Scalar(this.value - ((Scalar) other).value);
         }
-        return other.sub(this).mul(new Scalar(-1));
+        return other.add(this).mul(new Scalar(-1));
     }
 
     @Override
@@ -29,15 +29,15 @@ class Scalar extends Var {
         if (other instanceof Scalar) {
             return new Scalar(this.value * ((Scalar) other).value);
         }
-        return other.mul(this);
+        return other.add(this);
     }
 
     @Override
     public Var div(Var other) throws CalcException {
         if (other instanceof Scalar) {
             double secondScalar = ((Scalar) other).value;
-            if (secondScalar == 0) {
-                throw new CalcException("division by zero");
+            if (secondScalar==0){
+                return null; //TODO div Scalar by zero
             }
             return new Scalar(this.value / secondScalar);
         }

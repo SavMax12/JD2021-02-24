@@ -12,7 +12,7 @@ public class ConsoleRunner {
             String expression = scanner.nextLine();
             if (!expression.equals("end")) {
                 try {
-                    Var resultVar = parser.evaluate(expression);
+                    Var resultVar = parser.calc(expression);
                     printer.print(resultVar);
                 } catch (CalcException e) {
                     printer.print(e);
